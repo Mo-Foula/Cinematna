@@ -106,7 +106,7 @@ include "functions.php" ?>
                                                                 <!-- so the function could get what he watched -->
                                                                 <!-- get_whatchedHistory(database connection, user_id) -->
                                                                 <?php
-                                                                get_whatchedHistory($db, 1);
+                                                                get_whatchedHistory($db, 0);
                                                                 ?>
                                                             </div>
                                                         </div>
