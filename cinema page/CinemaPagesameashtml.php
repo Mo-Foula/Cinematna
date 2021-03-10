@@ -22,8 +22,47 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script>
+		function generateReview(title, comment, user_name, rating){
+			rating = Math.round(rating);
+			// var stars = ;
+			// var empty_stars = '<i class="ion-android-star"></i>';
+			var stars = '<i class="ion-android-star"></i>'.repeat(rating)+'<i class="ion-android-star last"></i>'.repeat(10-rating);
+
+			// console.log('<i class="ion-android-star"></i>'*rating + '<i class="ion-android-star"></i>'* (10-rating));
+			// var stars = '<i class="ion-android-star"></i>'*rating + '<i class="ion-android-star"></i>'* (10-rating);
+			
+			return `
+			<div class="mv-user-review-item">
+								<div class="user-infor">
+									<div>
+										<h3>`+title+`</h3>
+										<div class="no-star">
+										`+stars+
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star"></i>
+											// <i class="ion-android-star last"></i>
+										`</div>
+										<p class="time">
+											`
+											// +date
+											//17 December 2016
+											 +` by `+user_name //<a href="#"> `+user_name+`</a>
+										+`</p>
+									</div>
+								</div>
+								<p>`+comment+`</p>
+							</div>
+			`;
+		}
 		function movieGrid(name, imgsrc, rating, movieLink, id){
-			document.write(`<div style="100%; " class=" movie-item-style-1">
+			return `<div style="100%; " class=" movie-item-style-1">
 
 									<img src=`+imgsrc+` alt="">
 									<div class="hvr-inner">
@@ -35,7 +74,7 @@
 											<p class="rate"><i class="ion-android-star"></i><span>`+rating+`</span> /10</p>
 										</div>
 									</center>
-								</div>	`);
+								</div>	`;
 		}
 
 
@@ -99,24 +138,24 @@
 				<div class="tab-content">
 					<div id="movies" class="tab active">
 						<div class="row">
-							<div class="flex-wrap-movielist">
+							<div class="flex-wrap-movielist" id="moviesinhere">
 									<script>
 										//TODO
-										movieGrid('LaLaLand',"images/uploads/mv3.jpg",8.2,'google.com',1);
-										movieGrid('X-Men',"images/uploads/mv2.jpg",8.2,'google.com',1);
-										movieGrid('ASDAD',"images/uploads/mv4.jpg",8.2,'google.com',1);
-										movieGrid('LaLaLand',"images/uploads/mv3.jpg",8.2,'google.com',1);
-										movieGrid('X-Men',"images/uploads/mv2.jpg",8.2,'google.com',1);
-										movieGrid('ASDAD',"images/uploads/mv4.jpg",8.2,'google.com',1);
-										movieGrid('LaLaLand',"images/uploads/mv3.jpg",8.2,'google.com',1);
-										movieGrid('X-Men',"images/uploads/mv2.jpg",8.2,'google.com',1);
-										movieGrid('ASDAD',"images/uploads/mv4.jpg",8.2,'google.com',1);
+										// movieGrid('LaLaLand',"images/uploads/mv3.jpg",8.2,'google.com',1);
+										// movieGrid('X-Men',"images/uploads/mv2.jpg",8.2,'google.com',1);
+										// movieGrid('ASDAD',"images/uploads/mv4.jpg",8.2,'google.com',1);
+										// movieGrid('LaLaLand',"images/uploads/mv3.jpg",8.2,'google.com',1);
+										// movieGrid('X-Men',"images/uploads/mv2.jpg",8.2,'google.com',1);
+										// movieGrid('ASDAD',"images/uploads/mv4.jpg",8.2,'google.com',1);
+										// movieGrid('LaLaLand',"images/uploads/mv3.jpg",8.2,'google.com',1);
+										// movieGrid('X-Men',"images/uploads/mv2.jpg",8.2,'google.com',1);
+										// movieGrid('ASDAD',"images/uploads/mv4.jpg",8.2,'google.com',1);
 									</script>	
 							</div>	
 						</div>
 					</div>
 					<div id="reviews" class="tab review">
-					   <div class="row">
+					   <div class="row" id ="CinemaReviewsArea">
 							<div class="rv-hd">
 								<div class="div">
 									<h3>Top Reviews</h3>
@@ -136,9 +175,8 @@
 									<option value="date">Release date Ascending</option>
 								</select>
 							</div> -->
-							<div class="mv-user-review-item">
+							<!-- <div class="mv-user-review-item">
 								<div class="user-infor">
-									<img src="images/uploads/userava1.jpg" alt="">
 									<div>
 										<h3>Best Marvel movie in my opinion</h3>
 										<div class="no-star">
@@ -254,7 +292,7 @@
 									<img src="images/uploads/userava5.jpg" alt="">
 									<div>
 										<h3>Impressive Special Effects and Cast</h3>
-										<div class="no-star">
+										<div class="no-star" >
 											<i class="ion-android-star"></i>
 											<i class="ion-android-star"></i>
 											<i class="ion-android-star"></i>
@@ -274,7 +312,7 @@
 								<p>The Avengers raid a Hydra base in Sokovia commanded by Strucker and they retrieve Loki's scepter. They also discover that Strucker had been conducting experiments with the orphan twins Pietro Maximoff (Aaron Taylor-Johnson), who has super speed, and Wanda Maximoff (Elizabeth Olsen), who can control minds and project energy. Tony Stark (Robert Downey Jr.) discovers an Artificial Intelligence in the scepter and convinces Bruce Banner (Mark Ruffalo) to secretly help him to transfer the A.I. to his Ultron defense system. However, the Ultron understands that is necessary to annihilate mankind to save the planet, attacks the Avengers and flees to Sokovia with the scepter. He builds an armature for self-protection and robots for his army and teams up with the twins. The Avengers go to Clinton Barton's house to recover, but out of the blue, Nick Fury (Samuel L. Jackson) arrives and convinces them to fight against Ultron. Will they succeed? </p>
 
 								<p>"Avengers: Age of Ultron" is an entertaining adventure with impressive special effects and cast. The storyline might be better, since most of the characters do not show any chemistry. However, it is worthwhile watching this film since the amazing special effects are not possible to be described in words. Why Pietro has to die is also not possible to be explained. My vote is eight.</p>
-							</div>
+							</div> -->
 							<!-- <div class="topbar-filter">
 								<label>Reviews per page:</label>
 								<select>
@@ -316,9 +354,11 @@
 		</div>
 	</div>
 	</div>
-	<?php require 'CinemaPage.php';?>
+	<?php require 'CinemaPage.php';
+	initializeData();
+	?>
 	<script>
-		
+
 		// var img = 'images/san.jpg';
 		// document.getElementById('poster_movie').src = img;
 		// var cinemaname = 'Cinema San Stefano';
