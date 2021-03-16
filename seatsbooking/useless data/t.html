@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+
+<body>
+
+    <select name="" id="select_cinema" onchange="abc()">
+        <option value="amir">Cinema Amir</option>
+        <option value="san">Cinema San Stefano</option>
+    </select>
+    <select name="" id="select_hall">
+      
+    </select>
+    <select name="" id="select_time" disabled='disabled'>
+        <option value="2">2 PM</option>
+    </select>
+
+    <script>
+        var amirhalls = [1,2,6];
+        // abc(1);
+        function abc() {
+            // alert('AOKOK');
+            var halls = document.getElementById('select_hall');
+            var stringOptions = '';
+            for(var i in amirhalls){
+                stringOptions += '<option value="'+amirhalls[i]+'">Hall '+amirhalls[i]+'</option>'
+            }
+            halls.innerHTML = stringOptions;
+        }
+        // document.getElementById('select_hall').hidden = true;
+    </script>
+
+</body>
+
+</html>
