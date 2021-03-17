@@ -37,7 +37,7 @@ function generate_toprated_movie(id, name, poster, rating) {
             <img src="`+ poster + `" alt="">
         </div>
         <div class="hvr-inner">
-            <a href="moviesingle.php?id=`+ id + `"> Read more <i
+            <a href="singlemoviepage.php?id=`+ id + `"> Read more <i
                     class="ion-android-arrow-dropright"></i>
             </a>
         </div>
@@ -60,7 +60,7 @@ function generate_commingsoon_movie(id, name, poster, rating) {
                 <img src="`+ poster + `" alt="">
             </div>
             <div class="hvr-inner">
-                <a href="moviesingle.php?id=`+ id + `"> Read more <i
+                <a href="singlemoviepage.php?id=`+ id + `"> Read more <i
                         class="ion-android-arrow-dropright"></i>
                 </a>
             </div>

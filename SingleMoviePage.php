@@ -149,8 +149,8 @@
 							<div><a id="trailer_movie_mine" href="https://www.youtube.com/embed/o-0hcF97wy0" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 						<div class="btn-transform transform-vertical">
-							<div><a href="allmoviesbooking.php" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
-							<div><a href="allmoviesbooking.php" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
+							<div><a href="allmoviesbooking.php"  class="item item-1 yellowbtn linkonmodal"> <i class="ion-card"></i> Buy ticket</a></div>
+							<div><a href="allmoviesbooking.php"  class="item item-2 yellowbtn linkonmodal"><i class="ion-card"></i></a></div>
 						</div>
 					</div>
 				</div>

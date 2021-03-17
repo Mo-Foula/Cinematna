@@ -30,8 +30,9 @@ $movie_data = mysqli_query($conn, $query);
       $run_time=$row["run_time"]; 
       $movie_trailer=$row["trailer"];
 
-      echo "<script> setMovieName('$movie_name','$movie_release_date','$movie_rate','$movie_poster',`$movie_des`,'$run_time','$movie_trailer') </script>";
-      //function setMovieName(MovieName,year,rate,poster,description,runTime,MovieTrailer) {     
+      echo "<script> setMovieName('$movie_name','$movie_release_date','$movie_rate','$movie_poster',`$movie_des`,'$run_time','$movie_trailer',$id) </script>";
+      //function setMovieName(MovieName,year,rate,poster,description,runTime,MovieTrailer) {   
+        // echo "document.getElementById('linkonmodal').href = \"modalpage.php?id=$id\";";  
 
       echo "<script> document.getElementById('trailer_movie_mine').href = \"$movie_trailer\";</script>";
 
