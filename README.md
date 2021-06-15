@@ -2,3 +2,5 @@ Cinematna web application is a cinema tickets booking application where the user
 After booking is done the user gets QR code that he will use at the cinema so that the cinema can confirm his tickets.
 
 Project URL: http://cinematna.000webhostapp.com/
+
+Admin ticket verification mobile application using QR code: https://github.com/Mo-Foula/Cinematna-Verification-System
